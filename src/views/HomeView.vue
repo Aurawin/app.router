@@ -1,18 +1,51 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img class="logo" :alt="langModel.Dictionary.Image.Alt.Logo.Value() " />
+    <BeginSetup />
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { ref } from 'vue'
+import {langModel} from '@/components/lang'
+import BeginSetup from '@/views/dialogs/BeginSetup.vue'
 
 export default {
   name: 'HomeView',
+  setup(){
+    const BeginSetup = ref(null)
+    const doShowModal = () => {
+      BeginSetup.value.showModal()
+    }
+    return {
+      BeginSetup,
+      langModel,
+      doShowModal
+    }
+  },
   components: {
-    HelloWorld
+    BeginSetup
+  },
+  methods:{
+    doShowBeginSetup(){
+
+    }
   }
 }
 </script>
+<style>
+img.logo{
+  display: flex;
+  position: static;
+  width: 80px;
+  height: 80px;
+  content:url('@/assets/WiFi-Logo.2.png')
+}
+div.home{
+  display: flex;
+  position: fixed;
+  margin: 0px 0px 0px 0px;
+  width: 100%;
+}
+</style>

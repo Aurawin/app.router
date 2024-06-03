@@ -1,5 +1,6 @@
 # app.router
 Application for Managing the Aurawin Router
+<<<<<<< HEAD
 # app
 
 ## Project setup
@@ -19,3 +20,5 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+>>>>>>> f806316 (Initial commit)
